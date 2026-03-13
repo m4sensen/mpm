@@ -121,16 +121,3 @@ This project is released under [MIT License](LICENSE).
 > ⚠️ Note: Always run `mpm` commands with appropriate permissions (sudo may be required for system updates and icon installations).
 
 ```
-
----
-
-If you want, I can also **add a “Developer Guide” section** showing:
-
-- How to add new MPM commands
-- How to extend support for other Linux distributions
-- How to add custom scripts inside `/usr/local/bin/mpm/lib`
-
-This would make your README fully professional.
-
-Do you want me to do that?
-```
