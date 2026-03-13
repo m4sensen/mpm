@@ -24,8 +24,8 @@ MPM is a simple, cross-distro system package manager designed to manage updates,
 1. Clone or copy MPM to your system:
 
 ```bash
-git clone "https://github.com/m4sensen/mpm.git" ~/mpm
-cd ~/mpm
+git clone "https://github.com/m4sensen/mpm.git" ~/Downloads/mpm
+cd ~/Downloads/mpm
 sudo bash install.sh
 ```
 
