@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Update System
+Comment=Full system updater
+Exec=pkexec /usr/local/bin/mpm/lib/update.sh
+Icon=mpm
+Terminal=true
+StartupNotify=false
+Categories=System;Utility;

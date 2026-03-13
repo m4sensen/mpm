@@ -1,0 +1,46 @@
+#!/bin/bash
+set -euo pipefail
+
+case "${1:-}" in
+    update)
+        /usr/local/bin/mpm/lib/update.sh
+        ;;
+        
+    uninstall)
+        /usr/local/bin/mpm/lib/uninstall.sh
+        ;;
+        
+    version)
+        cat <<'EOF'
+Masensen Package manager
+
+Version: 1.0
+Author: Masensen
+
+Supported systems:
+- Ubuntu / Debian
+- Fedora
+- Arch Linux
+
+Features:
+- System package updates
+- Flatpak updates
+- Snap updates
+- System cleaning
+- GNOME refresh
+
+Commands:
+mpm update     → run system update
+mpm uninstall  → remove updater
+mpm version    → show this information
+EOF
+        ;;
+        
+    *)
+        echo "Usage:"
+        echo "  mpm update"
+        echo "  mpm uninstall"
+        echo "  mpm version"
+        exit 1
+        ;;
+esac
