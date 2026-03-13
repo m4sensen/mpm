@@ -119,5 +119,3 @@ This project is released under [MIT License](LICENSE).
 ---
 
 > ⚠️ Note: Always run `mpm` commands with appropriate permissions (sudo may be required for system updates and icon installations).
-
-```
