@@ -21,7 +21,7 @@ require() {
     source "$filePath"
 }
 
-require "$PROJECT_DIR/init/base.sh"
+require "init/base.sh"
 
 case "${1:-}" in
     update)
