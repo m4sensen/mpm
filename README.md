@@ -24,12 +24,6 @@ cd mpm
 sudo bash install.sh
 ```
 
-Then restart your shell or run:
-
-```bash
-source ~/.bashrc
-```
-
 ## Usage
 
 ```bash
@@ -42,12 +36,6 @@ mpm version     # Show version and feature info
 
 ```bash
 mpm uninstall
-```
-
-Or manually:
-
-```bash
-sudo bash /path/to/mpm/install.sh  # then choose uninstall
 ```
 
 ## License
