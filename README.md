@@ -4,9 +4,11 @@ A cross-distro Linux system updater with a clean terminal UI.
 
 ## Supported Systems
 
-- Ubuntu / Debian / Linux Mint / Pop!_OS
+> Requires GNOME desktop environment
+
+- Ubuntu / Debian
 - Fedora
-- Arch Linux / Manjaro / EndeavourOS
+- Arch Linux
 
 ## Features
 
