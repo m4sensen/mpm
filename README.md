@@ -21,7 +21,7 @@ A cross-distro Linux system updater with a clean terminal UI.
 ## Installation
 
 ```bash
-git clone https://github.com/masensen/mpm.git
+git clone https://github.com/m4sensen/mpm.git
 cd mpm
 sudo bash install.sh
 ```
