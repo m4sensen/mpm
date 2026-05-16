@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+trap 'echo "Error on line $LINENO. Exit code: $?" >&2' ERR
+
+# -----------------------------
+# Paths & User Context
+# -----------------------------
+readonly PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+require() {
+    local filePath="$PROJECT_DIR/$1"
+
+    if [[ ! -f "$filePath" || ! -r "$filePath" ]]; then
+        echo "Fatal: cannot load $filePath" >&2
+        exit 1
+    fi
+
+    source "$filePath"
+}
+
+require "init/base.sh"
+
+case "${1:-}" in
+    update)
+        logAttempt "Running system update"
+        bash "$PROJECT_DIR/scripts/update.sh"
+        ;;
+
+    uninstall)
+        logAttempt "Running uninstaller"
+        bash "$PROJECT_DIR/scripts/uninstall.sh"
+        ;;
+
+    version)
+        logLogo "$ASCII"
+        logTitle "Masensen Package Manager"
+        logParagraph "Version:  1.0"
+        logParagraph "Author:   Masensen"
+        logBreak
+        logHeading "Supported Systems"
+        logParagraph "  Ubuntu / Debian"
+        logParagraph "  Fedora"
+        logParagraph "  Arch Linux"
+        logBreak
+        logHeading "Features"
+        logParagraph "  System package updates"
+        logParagraph "  Flatpak updates"
+        logParagraph "  Snap updates"
+        logParagraph "  System cleaning"
+        logParagraph "  GNOME refresh"
+        logBreak
+        logHeading "Commands"
+        logParagraph "  mpm update     — run system update"
+        logParagraph "  mpm uninstall  — remove mpm"
+        logParagraph "  mpm version    — show this information"
+        ;;
+
+    *)
+        logError "Unknown command: '${1:-}'"
+        logBreak
+        log "Usage:"
+        logParagraph "  mpm update     — run system update"
+        logParagraph "  mpm uninstall  — remove mpm"
+        logParagraph "  mpm version    — show version info"
+        exit 1
+        ;;
+esac

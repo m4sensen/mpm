@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Update System
+Comment=Full system updater
+Exec=pkexec mpm update
+Icon=mpm
+Terminal=true
+StartupNotify=false
+Categories=System;Utility;
