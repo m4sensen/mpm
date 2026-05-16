@@ -8,7 +8,7 @@ trap 'echo "Error on line $LINENO. Exit code: $?" >&2' ERR
 # -----------------------------
 # Paths & User Context
 # -----------------------------
-readonly PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly PROJECT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 
 require() {
     local filePath="$PROJECT_DIR/$1"
@@ -21,7 +21,7 @@ require() {
     source "$filePath"
 }
 
-require "init/base.sh"
+require "$PROJECT_DIR/init/base.sh"
 
 case "${1:-}" in
     update)
